@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 using System.Text;
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
-
+using System.Linq;
 namespace EdgeSimulatedTemperatureSensorCore
 {
     class Program
@@ -258,7 +258,11 @@ namespace EdgeSimulatedTemperatureSensorCore
                         //send messages to hub                        
                         await deviceClient.SendEventAsync("temperatureOutput", message);
                         Console.WriteLine($"\t{DateTime.UtcNow.ToShortDateString()} {DateTime.UtcNow.ToLongTimeString()}> Sending message: {counter}, Body: {messageString}");
-                        Thread.Sleep(2000);   
+                        Console.WriteLine("The desired properties sendInterval is {0}",desiredPropertiesData.SendInterval);
+                        if (Enumerable.Range(0, 1).Contains(desiredPropertiesData.SendInterval))
+                            Thread.Sleep(2000);
+                        else
+                            Thread.Sleep((desiredPropertiesData.SendInterval*1000));   
                     }
                 }
                 catch (Exception ex)
