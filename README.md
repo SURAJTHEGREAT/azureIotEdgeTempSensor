@@ -39,6 +39,12 @@ as defined in routes as (please check the routes tempSensorTotempSensorFilter)
 }
 ```
 
+## Dependend repositories
+
+1. https://github.com/SURAJTHEGREAT/toAzureEventsHubCosmosDB
+2. https://github.com/SURAJTHEGREAT/azureEdgeSensorFilter
+3. https://github.com/SURAJTHEGREAT/azureIotEdgeTempSensor
+
 
 
 
