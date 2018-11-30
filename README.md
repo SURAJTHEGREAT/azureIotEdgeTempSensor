@@ -5,7 +5,7 @@
  ## Goal
 To generate simulated sensor data , in edge module and push to filter module for filteration of temperature data 
 ## Development Language 
- C#
+ C# Core
 ## Refered from 
 
 https://github.com/Azure/iot-edge-v1/tree/master/v2/samples/azureiotedge-simulated-temperature-sensor
